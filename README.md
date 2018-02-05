@@ -57,7 +57,7 @@ It was based on the [POC](https://github.com/notnola/TcRTC) by [notnola](https:/
 
 Examples shown here, assumes you are using windows.
 
-pinylib-rtc was developed using [python 2.7.10](https://www.python.org/downloads/windows/ "python for windows") so this is the recomended python interpreter. Later versions of python should work to, aslong as they are from the 2.7 family. I have not tested it with python 3, but with a few changes to client.py i think it would be possible.
+pinylib-rtc was developed using [python 2.7.10](https://www.python.org/downloads/windows/ "python for windows") so this is the recomended python interpreter. Later versions of python should work to, aslong as they are from the 2.7 family. I have not tested it with python 3, but with a few changes to client.py i think it would be possible. Be sure to  install Microsoft Visual C++ Compiler for Python 2.7 here or the bot will not work. https://www.microsoft.com/en-us/download/confirmation.aspx?id=44266
 
 ### Requirements
 
@@ -71,7 +71,7 @@ pinylib-rtc requires 4 libraries that are not part of the standard python librar
 
 These can all be installed form a command prompt with pip.
 
-`pip install websocket-client requests colorama beautifulsoup4 pycryto`
+`pip install pickledb websocket-client requests colorama beautifulsoup4 pycrypto`
 
 
 ## Run the client
