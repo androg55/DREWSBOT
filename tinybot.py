@@ -1596,10 +1596,10 @@ class TinychatBot(pinylib.TinychatRTCClient):
             time.sleep(1)
             self.send_private_msg(
                 self.active_user.id, 'Mod Cmds: !clr, !kick, !ban, !cam, !close, !bada  <account>, !banw <badword>,!rmw <badword>, !rmbad <account>, !badn <nick>, !rmv, !v')
-        if self.active_user.user_level == 5:
+        if self.active_user.user_level < 5:
             time.sleep(4)
-            self.send_private_msg(
-                self.active_user.id, 'Media Cmds: !yt, !close, !seek, !reset, !spl, !del, !skip, !yts, !rpl, !pause, !play, !pyst')
+            self.send_chat_msg(
+                                     'Media Cmds: !yt, !close, !seek, !reset, !spl, !del, !skip, !yts, !rpl, !pause, !play, !pyst')
         if self.active_user.user_level < 4:
             time.sleep(1)
             self.send_private_msg(
