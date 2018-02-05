@@ -13,7 +13,7 @@ BOT WILL CONNECT, BUT IF IT DOES NOT RESPOND OR IS NOT MODDED. FOLLOW THE INSTRU
 
 1. Log into the account the bot uses by using chrome.
 
-2. Go the the main directory and select any room and join it. 
+2. Go to the main directory and select any room and join it. 
 
 3. solve the capcha.
 
