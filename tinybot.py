@@ -455,7 +455,17 @@ class TinychatBot(pinylib.TinychatRTCClient):
                     self.do_lockdown(1)
                 elif cmd == prefix + 'lockup':
                     self.do_lockdown(0)
-
+		elif cmd == prefix + 'reboot':
+			self.do_reboot()
+				
+		elif cmd == prefix + 'greet':		
+			self.do_greet()
+			
+		elif cmd == prefix + 'kb':
+			self.do_kick_as_ban()
+			
+			
+			
             if _user.user_level == 2:
 
 
