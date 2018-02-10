@@ -1,117 +1,87 @@
-
-## Buddy Modified Tinychat Bot
-
-Based off Nortxort's Tinychat Bot and Pinylib.
-For further questions, catch me online as buddy in http://tinychat.com/fobcity
-BTW: I am not a programmer, I learnt Python a few weeks ago.
+Buddy Modified Tinychat Bot
+Based off Nortxort's Tinychat Bot and Pinylib. For further questions, catch me online as buddy in http://tinychat.com/fobcity BTW: I am not a programmer, I learnt Python a few weeks ago.
 
 All database related items moved to using pickledb, uncomment the right section to start the users.db until later.
 
-- Spam Protection
-	- On Join flooding
-	- Spam Repeat text
-	- Random nick Check
-	- Lockdown with password or no guest mode
+Spam Protection
 
-- Verification System
-	- Verified Accounts can control youtube and auto-cam'ed by bot
+On Join flooding
+Spam Repeat text
+Random nick Check
+Lockdown with password or no guest mode
+Verification System
 
-- Dj Mode
-	- Limits all chatmods and Verified Accounts from using youtube unless a dj is defined.
-	- !djmode and !dj <nick>
+Verified Accounts can control youtube and auto-cam'ed by bot
+Dj Mode
 
-- Chat Mods
-	- Chat moderations can !kick and !ban, other mod cmds
+Limits all chatmods and Verified Accounts from using youtube unless a dj is defined.
+!djmode and !dj
+Chat Mods
 
-- Things to do
-	- Chat log analytics
-	- Administrator user level which allow admin defined users to access Add/Remove Monderators
-	- Clean up code, move on_join checking to another function
-	- Vote Banning System
-	- Update to python 3
+Chat moderations can !kick and !ban, other mod cmds
+Things to do
 
-- Commands:
+Chat log analytics
+Administrator user level which allow admin defined users to access Add/Remove Monderators
+Clean up code, move on_join checking to another function
+Vote Banning System
+Update to python 3
+Commands:
 
-	Verified Accounts:
-	Media Cmds: !yt, !close, !seek, !reset, !spl, !del, !skip, !yts, !rpl, !pause, !play, !pyst
+Verified Accounts: Media Cmds: !yt, !close, !seek, !reset, !spl, !del, !skip, !yts, !rpl, !pause, !play, !pyst
 
-	Chatmods and !mod tmp users:
-	Mod Cmds: !clr, !kick, !ban, !cam, !close, !bada  <account>, !banw <badword>,!rmw <badword>, !rmbad <account>, !badn <nick>, !chatmod, !v, !rmv, !dechatmod
+Chatmods and !mod tmp users: Mod Cmds: !clr, !kick, !ban, !cam, !close, !bada , !banw ,!rmw , !rmbad , !badn , !chatmod, !v, !rmv, !dechatmod
 
-	Mods and Admins:
-	Admin Cmds: !lockdown (noguests), !lockup(password enabled), !noguest, !p2t
+Mods and Admins: Admin Cmds: !lockdown (noguests), !lockup(password enabled), !noguest, !p2t
 
-	Other cmds: !urb, !8ball, !flip, !roll, !whoplayed, !now, !status, !chuck, !wea
+Other cmds: !urb, !8ball, !flip, !roll, !whoplayed, !now, !status, !chuck, !wea
 
-
-## Pinylib-RTC
-
+Pinylib-RTC
 WebRTC module for tinychat chat rooms.
 
 This is the WebRTC version of pinylib. The structure and the coding style is the same as the original pinylib. Since tinychat is still in beta stage, this version should also be seen as a sort of beta version.
 
-It was based on the [POC](https://github.com/notnola/TcRTC) by [notnola](https://github.com/notnola)
+It was based on the POC by notnola
 
-
-## Setting up
-
+Setting up
 Examples shown here, assumes you are using windows.
 
-pinylib-rtc was developed using [python 2.7.10](https://www.python.org/downloads/windows/ "python for windows") so this is the recomended python interpreter. Later versions of python should work to, aslong as they are from the 2.7 family. I have not tested it with python 3, but with a few changes to client.py i think it would be possible.
+pinylib-rtc was developed using python 2.7.10 so this is the recomended python interpreter. Later versions of python should work to, aslong as they are from the 2.7 family. I have not tested it with python 3, but with a few changes to client.py i think it would be possible. Be sure to install Microsoft Visual C++ Compiler for Python 2.7 here or pycrypto will not compile correctly using pip install. https://www.microsoft.com/en-us/download/confirmation.aspx?id=44266
 
-### Requirements
-
+Requirements
 pinylib-rtc requires 4 libraries that are not part of the standard python library, these being:
 
-* https://pypi.python.org/pypi/pycrypto
-* [websocket-client](https://github.com/websocket-client/websocket-client)
-* [requests](https://github.com/kennethreitz/requests "requests")
-* [colorama](https://github.com/tartley/colorama "Colorama")
-* [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/ "beautifulsoup4")
-
+https://pypi.python.org/pypi/pycrypto
+websocket-client
+requests
+colorama
+BeautifulSoup4
 These can all be installed form a command prompt with pip.
 
-`pip install websocket-client requests colorama beautifulsoup4 pycryto`
+pip install pickledb websocket-client requests colorama beautifulsoup4 pycrypto
 
+Run the client
+Run the client by typing python path\to\bot.py in a command prompt.
 
-## Run the client
+!v to verify !chatmod to add as a chatmod
 
-Run the client by typing `python path\to\bot.py` in a command prompt.
-
-!v <account> to verify
-!chatmod <account> to add as a chatmod
-
-
-## Authors
-* [odsum] (https://github.com/odsum)
-* [nortxort](https://github.com/nortxort)
-
-
-## License
-
+Authors
+[odsum] (https://github.com/odsum)
+nortxort
+License
 The MIT License (MIT)
 
 Copyright (c) 2017 Notnola
 
 Copyright (c) 2017 Nortxort
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software
-and associated documentation files (the "Software"), to deal in the Software without restriction,
-including without limitation the rights to use, copy, modify, merge, publish, distribute,
-sublicense, and/or sell copies of the Software, and to permit persons to whom the Software
-is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice
-shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## Acknowledgments
-*Thanks to the following people who in some way or another, has helped with this project*
+Acknowledgments
+Thanks to the following people who in some way or another, has helped with this project
 
-* [notnola](https://github.com/notnola)
+notnola
