@@ -1,0 +1,5 @@
+Proxy connection using proxy.txt.
+
+Announce users that are banned. (code something smart ass in.)
+
+Add more API features.

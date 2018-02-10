@@ -1,0 +1,1 @@
+If the bot fails to connect try adding a folder inside the rooms folder. Name the folder the tinychat room your wanting to enter.

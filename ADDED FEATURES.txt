@@ -1,0 +1,15 @@
+Added Commands 
+
+!reboot -user level 1-5 level 7 is optional but hashtaggedout.
+
+!greet - user level 1-5 level 7 is optional but hashtaggedout.
+
+!kb - user level 1-5 level 7 is optional but hashtaggedout.
+
+!rules - Public command. can be edited in tinybot.py
+
+!help cmd sends high level cmds to a mods Pm's and posts the low level cmds to public chat. 
+
+Addded features - Greets Room Owner.
+
+ 

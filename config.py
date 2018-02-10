@@ -8,11 +8,11 @@ ROOM = ''
 # Fallback rtc version.
 FALLBACK_RTC_VERSION = '2.0.22-4'
 # Log chat messages and events.
-CHAT_LOGGING = True
+CHAT_LOGGING = False
 # Show additional info/errors in console.
 DEBUG_MODE = False
 # Log debug info to file.
-DEBUG_TO_FILE = False
+DEBUG_TO_FILE = True
 # Logging level for the debug file.
 DEBUG_LEVEL = 30
 # Use colors for the console.
