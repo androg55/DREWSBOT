@@ -278,6 +278,7 @@ class TinychatBot(pinylib.TinychatRTCClient):
                 if pinylib.CONFIG.B_GREET and _user is not None:
                     if not _user.nick.startswith('guest-'):
                         if _user.user_level < 4:
+		           if _user.user_level < 1:
                             pass
                             self.send_chat_msg(' Mod Is Detected As "%s". Welcome Back "%s". ' % (_user.account, _user.nick))
                         elif _user.user_level == 5:
@@ -294,6 +295,10 @@ class TinychatBot(pinylib.TinychatRTCClient):
 
                             self.send_chat_msg('Welcome "%s". Hmmmm, It Seems Youre Not Signed In. Sign In Here. https://tinychat.com/start?#signin ' % (
                                _user.nick))
+							   
+			if _user.is_owner:
+				_user.user_level = 1
+				self.send_chat_msg('Room Owner Detected As "%s". AH!! The Boss Has Arrived!! ' % (_user.nick))
 
     def on_pending_moderation(self, pending):
         _user = self.users.search(pending['handle'])
@@ -552,18 +557,18 @@ class TinychatBot(pinylib.TinychatRTCClient):
                 elif dj_mode and _user.account in djs:
                     isdj = 0
 					
-		elif cmd == prefix + 'reboot':  #Adds reboot toggle cmd to level 6 basic users. Should remain off.
-			self.do_reboot()
-		
-		elif cmd == prefix + 'greet':	 #Adds greet toggle cmd to level 6 basic users. Should remain off.
-			self.do_greet()
-			
-		elif cmd == prefix + 'kb':		 #Adds kb toggle AKA KickBan cmd to level 6 basic users. Should remain off.
-			self.do_kick_as_ban()
-
-		elif cmd == prefix + 'clr':		 #Adds clr cmd to level 6 users. Should Remain Off
-				self.do_clear()
-
+#		elif cmd == prefix + 'reboot':  #Adds reboot toggle cmd to level 6 basic users. Should remain off.
+#			self.do_reboot()
+#		
+#		elif cmd == prefix + 'greet':	 #Adds greet toggle cmd to level 6 basic users. Should remain off.
+#			self.do_greet()
+#			
+#		elif cmd == prefix + 'kb':		 #Adds kb toggle AKA KickBan cmd to level 6 basic users. Should remain off.
+#			self.do_kick_as_ban()
+#
+#		elif cmd == prefix + 'clr':		 #Adds clr cmd to level 6 users. Should Remain Off
+#				self.do_clear()
+#
 		elif cmd == prefix + 'rules':		 # Added Rules cmd. Posts a defined str to public chat.
 				self.send_chat_msg('READ OUR RULES: https://anotepad.com/notes/idwmxp')
 			
