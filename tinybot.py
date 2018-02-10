@@ -282,13 +282,13 @@ class TinychatBot(pinylib.TinychatRTCClient):
                             self.send_chat_msg(' Mod Is Detected As "%s". Welcome Back "%s". ' % (_user.account, _user.nick))
                         elif _user.user_level == 5:
                             pass
-                            self.send_chat_msg('WELCOME "%s", YOU HAVE VIP ACCESS' % (_user.nick))
+                            #self.send_chat_msg('WELCOME "%s", YOU HAVE VIP ACCESS' % (_user.nick))
 
                         elif _user.user_level == 6:
                             #self.send_private_msg(_user.id, 'Welcome to %s - ask to have your account verified.' % (self.room_name))
 
                             self.send_chat_msg(
-                                'Welcome "%s". You Are Signed In As "%s". Enjoy CoffeeBreak' % (_user.nick, _user.account))
+                                'Welcome "%s". You Are Signed In As "%s". Enjoy The Room' % (_user.nick, _user.account))
                         elif _user.user_level == 7:
                             #self.send_private_msg(_user.id, 'Welcome to %s - we suggest making an account, personal info trolling or sexual harassment will not be tolerated.' % (self.room_name))
 
@@ -455,7 +455,7 @@ class TinychatBot(pinylib.TinychatRTCClient):
                     self.do_lockdown(1)
                 elif cmd == prefix + 'lockup':
                     self.do_lockdown(0)
-		elif cmd == prefix + 'reboot':
+		elif cmd == prefix + 'reboot':		
 			self.do_reboot()
 				
 		elif cmd == prefix + 'greet':		
@@ -530,7 +530,14 @@ class TinychatBot(pinylib.TinychatRTCClient):
                     self.do_bad_account(cmd_arg)
                 elif cmd == prefix + 'rmbada':
                     self.do_remove_bad_account(cmd_arg)
-
+		elif cmd == prefix + 'reboot':						#Adds reboot toggle cmd to level 5 modded users. Added for convenience.
+			self.do_reboot()		
+			
+		elif cmd == prefix + 'greet':						#Adds greet toggle cmd to level 5 modded users. Added for convenience.
+			self.do_greet()
+			
+		elif cmd == prefix + 'kb':							#Adds kb AKA kickban toggle cmd to level 5 modded users. Added for convenience.
+			self.do_kick_as_ban()
 
                 if cmd == prefix + 'dj':
                     threading.Thread(target=self.do_dj,
@@ -544,7 +551,22 @@ class TinychatBot(pinylib.TinychatRTCClient):
                     isdj = 1
                 elif dj_mode and _user.account in djs:
                     isdj = 0
+					
+		elif cmd == prefix + 'reboot':  #Adds reboot toggle cmd to level 6 basic users. Should remain off.
+			self.do_reboot()
+		
+		elif cmd == prefix + 'greet':	 #Adds greet toggle cmd to level 6 basic users. Should remain off.
+			self.do_greet()
+			
+		elif cmd == prefix + 'kb':		 #Adds kb toggle AKA KickBan cmd to level 6 basic users. Should remain off.
+			self.do_kick_as_ban()
 
+		elif cmd == prefix + 'clr':		 #Adds clr cmd to level 6 users. Should Remain Off
+				self.do_clear()
+
+		elif cmd == prefix + 'rules':		 # Added Rules cmd. Posts a defined str to public chat.
+				self.send_chat_msg('READ OUR RULES: https://anotepad.com/notes/idwmxp')
+			
                 if cmd == prefix + 'skip':
                     if dj_mode and isdj:
                         self.send_chat_msg('%s, %s is in DJ mode, current djs are: %' % (
@@ -1133,7 +1155,7 @@ class TinychatBot(pinylib.TinychatRTCClient):
     def do_clear(self):
         """ Clears the chat box. """
         self.send_chat_msg('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
-                           '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
+                           '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')				   
 
     def do_kick(self, user_name):
         """ 
